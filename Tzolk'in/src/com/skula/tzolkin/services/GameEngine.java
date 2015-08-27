@@ -11,42 +11,40 @@ import com.skula.tzolkin.models.Religion;
 import com.skula.tzolkin.models.Science;
 
 public class GameEngine {
+	public static final int PHASE_BLUE = 0;
+
 	// Joueurs
 	private List<Player> players;
 	private int nPlayers;
 	// Gameplay
 	private Gearing gearing;
-	private Religion religion;
-	private Science science;
 	private List<Building> monuments;
 	private List<Building> buildingsLevel1;
 	private List<Building> buildingsLevel2;
-	
-	public GameEngine(int nPlayer){
+
+	public GameEngine(int nPlayer) {
 		this.nPlayers = nPlayer;
 		this.players = new ArrayList<Player>();
-		for(int i = 0; i<nPlayer; i++){
+		for (int i = 0; i < nPlayer; i++) {
 			players.add(new Player(i));
 		}
-		
+
 		this.gearing = new Gearing();
-		this.religion = new Religion();
-		this.science = new Science();
-		
+
 		this.monuments = new ArrayList<Building>();
-		for(int i=0; i<6; i++){
+		for (int i = 0; i < 6; i++) {
 			this.monuments.add(Building.MONUMENTS.remove(0));
 		}
 
 		this.buildingsLevel1 = new ArrayList<Building>();
-		for(int i=0; i<6; i++){
+		for (int i = 0; i < 6; i++) {
 			this.buildingsLevel1.add(Building.BUILDINGS_LEVEL1.remove(0));
 		}
 		this.buildingsLevel2 = new ArrayList<Building>();
-		
+
 		// bouchon
-		players.get(0).addPawns(new Pawn(0,5));
-		players.get(0).addPawns(new Pawn(0,5));
+		players.get(0).addPawns(new Pawn(0, 5));
+		players.get(0).addPawns(new Pawn(0, 5));
 		players.get(0).updateTemple(Religion.TEMPLE_RED, 1);
 		players.get(0).updateTemple(Religion.TEMPLE_GREEN, 3);
 		players.get(0).updateTemple(Religion.TEMPLE_YELLOW, 5);
@@ -78,22 +76,6 @@ public class GameEngine {
 
 	public void setGearing(Gearing gearing) {
 		this.gearing = gearing;
-	}
-
-	public Religion getReligion() {
-		return religion;
-	}
-
-	public void setReligion(Religion religion) {
-		this.religion = religion;
-	}
-
-	public Science getScience() {
-		return science;
-	}
-
-	public void setScience(Science science) {
-		this.science = science;
 	}
 
 	public List<Building> getMonuments() {

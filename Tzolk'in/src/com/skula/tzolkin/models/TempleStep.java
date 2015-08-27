@@ -1,5 +1,7 @@
 package com.skula.tzolkin.models;
 
+import com.skula.tzolkin.enums.Commodity;
+
 public class TempleStep {
 	private int points;
 	private Commodity comodity;

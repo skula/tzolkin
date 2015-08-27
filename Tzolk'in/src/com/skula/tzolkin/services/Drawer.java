@@ -100,6 +100,10 @@ public class Drawer {
 		 drawPlayers(c);
 		 drawMonuments(c, engine.getMonuments());
 		 drawBuildings(c, engine.getBuildingsLevel1());
+		 
+		 int w = lib.get(R.drawable.building_1).getWidth();
+		 int h = lib.get(R.drawable.building_1).getHeight();
+		 c.drawText(w+", " +h, 50, 50, paint);
 	}
 
 	public void drawBackground(Canvas c) {
@@ -138,7 +142,7 @@ public class Drawer {
 		int x1;
 		int sep = SCIENCE_DX_TECH1;
 		
-		for(int i=0; i<Science.TECHOLOGIES_COUNT; i++){
+		for(int i=0; i<Science.TECHNOLOGIES_COUNT; i++){
 			int rank = p.getTechnoRank(i);
 			x1=rank==0?x:x+sep+(rank-1)*dx;
 			c.drawRect(relates(new Rect(x1, y , x1 + 20 , y  + 20)), paint);
@@ -150,7 +154,9 @@ public class Drawer {
 		int x = MONUMENTS_X0;
 		int y = MONUMENTS_Y0;
 		for (Building m : monuments) {
-			c.drawRect(relates(new Rect(x, y, x + 113, y + 145)), paint);
+			//c.drawRect(relates(new Rect(x, y, x + 113, y + 145)), paint);
+			c.drawBitmap(lib.get(R.drawable.building_1), new Rect(0,0,420,519), relates(new Rect(x, y, x + 113, y + 145)), paint);
+			
 			x += MONUMENTS_DX;
 		}
 	}

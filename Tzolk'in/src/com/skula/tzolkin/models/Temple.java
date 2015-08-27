@@ -3,6 +3,8 @@ package com.skula.tzolkin.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.skula.tzolkin.enums.Commodity;
+
 public class Temple {
 	private int size;
 	private TempleStep[] steps;

@@ -5,8 +5,9 @@ import java.util.List;
 
 public class Building {
 	public static final int BLUE = 0;
-	public static final int GRAY = 0;
-	public static final int GREEN = 0;
+	public static final int GRAY = 1;
+	public static final int GREEN = 2;
+	public static final int YELLOW = 3;
 
 	private int id;
 	private int drawableId;
@@ -22,35 +23,35 @@ public class Building {
 
 	static {
 		MONUMENTS = new ArrayList<Building>();
-		MONUMENTS.add(new Building(0, 0, BLUE, 0, 2, 3, 0));
-		MONUMENTS.add(new Building(1, 0, BLUE, 0, 4, 3, 0));
-		MONUMENTS.add(new Building(2, 0, BLUE, 0, 3, 3, 0));
-		MONUMENTS.add(new Building(3, 0, BLUE, 0, 0, 4, 1));
-		MONUMENTS.add(new Building(4, 0, GRAY, 1, 0, 4, 0));
-		MONUMENTS.add(new Building(5, 0, GRAY, 1, 3, 2, 0));
-		MONUMENTS.add(new Building(6, 0, GRAY, 2, 2, 2, 0));
-		MONUMENTS.add(new Building(7, 0, GRAY, 1, 1, 4, 0));
-		MONUMENTS.add(new Building(8, 0, GRAY, 3, 2, 1, 0));
-		MONUMENTS.add(new Building(9, 0, GREEN, 3, 0, 3, 0));
-		MONUMENTS.add(new Building(10, 0, GREEN, 2, 3, 1, 0));
-		MONUMENTS.add(new Building(11, 0, GREEN, 2, 1, 3, 0));
-		MONUMENTS.add(new Building(12, 0, GREEN, 1, 1, 3, 0));
+		MONUMENTS.add(new Building(0, 0, BLUE, 0, 0, 4, 1));
+		MONUMENTS.add(new Building(1, 0, GREEN, 2, 1, 3, 0));
+		MONUMENTS.add(new Building(2, 0, GRAY, 1, 0, 4, 0));
+		MONUMENTS.add(new Building(3, 0, GREEN, 3, 0, 3, 0));
+		MONUMENTS.add(new Building(4, 0, GRAY, 2, 2, 2, 0));
+		MONUMENTS.add(new Building(5, 0, GRAY, 3, 2, 1, 0));
+		MONUMENTS.add(new Building(6, 0, GREEN, 2, 3, 1, 0));
+		MONUMENTS.add(new Building(7, 0, BLUE, 0, 4, 3, 0));
+		MONUMENTS.add(new Building(8, 0, GREEN, 1, 1, 3, 0));
+		MONUMENTS.add(new Building(9, 0, BLUE, 0, 3, 3, 0));
+		MONUMENTS.add(new Building(10, 0, GRAY, 1, 1, 4, 0));
+		MONUMENTS.add(new Building(11, 0, BLUE, 0, 2, 3, 0));
+		MONUMENTS.add(new Building(12, 0, GRAY, 1, 3, 2, 0));
 
 		BUILDINGS_LEVEL1 = new ArrayList<Building>();
-		BUILDINGS_LEVEL1.add(new Building(0, 0, GREEN, 4, 0, 0, 0));
-		BUILDINGS_LEVEL1.add(new Building(1, 0, GREEN, 1, 0, 0, 0));
+		BUILDINGS_LEVEL1.add(new Building(0, 0, YELLOW, 4, 0, 0, 0));
+		BUILDINGS_LEVEL1.add(new Building(1, 0, YELLOW, 1, 0, 0, 0));
 		BUILDINGS_LEVEL1.add(new Building(2, 0, GREEN, 2, 1, 0, 0));
-		BUILDINGS_LEVEL1.add(new Building(3, 0, GREEN, 1, 0, 1, 0));
-		BUILDINGS_LEVEL1.add(new Building(4, 0, GREEN, 1, 0, 0, 0));
-		BUILDINGS_LEVEL1.add(new Building(5, 0, GREEN, 2, 1, 0, 0));
+		BUILDINGS_LEVEL1.add(new Building(3, 0, GRAY, 1, 0, 1, 0));
+		BUILDINGS_LEVEL1.add(new Building(4, 0, YELLOW, 1, 0, 0, 0));
+		BUILDINGS_LEVEL1.add(new Building(5, 0, GRAY, 2, 1, 0, 0));
 		BUILDINGS_LEVEL1.add(new Building(6, 0, GREEN, 3, 0, 0, 0));
-		BUILDINGS_LEVEL1.add(new Building(7, 0, GREEN, 1, 0, 0, 0));
-		BUILDINGS_LEVEL1.add(new Building(8, 0, GREEN, 1, 2, 0, 0));
-		BUILDINGS_LEVEL1.add(new Building(9, 0, GREEN, 0, 0, 1, 0));
+		BUILDINGS_LEVEL1.add(new Building(7, 0, YELLOW, 1, 0, 0, 0));
+		BUILDINGS_LEVEL1.add(new Building(8, 0, GRAY, 1, 2, 0, 0));
+		BUILDINGS_LEVEL1.add(new Building(9, 0, BLUE, 0, 0, 1, 0));
 		BUILDINGS_LEVEL1.add(new Building(10, 0, GREEN, 2, 0, 0, 0));
 		BUILDINGS_LEVEL1.add(new Building(11, 0, GREEN, 1, 1, 0, 0));
-		BUILDINGS_LEVEL1.add(new Building(12, 0, GREEN, 0, 1, 1, 0));
-		BUILDINGS_LEVEL1.add(new Building(13, 0, GREEN, 4, 0, 0, 0));
+		BUILDINGS_LEVEL1.add(new Building(12, 0, BLUE, 0, 1, 1, 0));
+		BUILDINGS_LEVEL1.add(new Building(13, 0, YELLOW, 4, 0, 0, 0));
 
 		BUILDINGS_LEVEL2 = new ArrayList<Building>();
 		BUILDINGS_LEVEL1.add(new Building(14, 0, GREEN, 0, 2, 0, 0));
