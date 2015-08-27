@@ -51,6 +51,25 @@ public class Drawer {
 	private static final int WHEEL_BLUE_RADIUS = 112;
 	private static final int WHEEL_BLUE_DANGLE = -98;
 
+	private static final int RELIGION_X0 = 1500;
+	private static final int RELIGION_Y0 = 535;
+	private static final int RELIGION_DX = 155;
+	private static final int RELIGION_DY = 45;
+		
+	private static final int SCIENCE_X0 = 1500;
+	private static final int SCIENCE_Y0 = 610;
+	private static final int SCIENCE_DX = 120;
+	private static final int SCIENCE_DY = 100;
+	private static final int SCIENCE_DX_TECH1 = 50;
+	
+	private static final int MONUMENTS_X0 = 1222;
+	private static final int MONUMENTS_Y0 = 1012;
+	private static final int MONUMENTS_DX = 111 + 11;
+	
+	private static final int BUILDINGS_X0 = 1222;
+	private static final int BUILDINGS_Y0 = 1190;
+	private static final int BUILDINGS_DX = 111 + 11;
+
 	private PictureLibrary lib;
 	private GameEngine engine;
 	private Paint paint;
@@ -101,49 +120,47 @@ public class Drawer {
 	}
 
 	private void drawPawnReligion(Canvas c, Player p) {
-		int dy = 45;
-		int x = 1500;
-		int y = 535;
+		int dy = RELIGION_DY;
+		int x = RELIGION_X0;
+		int y = RELIGION_Y0;
 		
 		for(int i=0; i<Religion.TEMPLES_COUNT; i++){
 			int rank = p.getTempleStep(i);
 			c.drawRect(relates(new Rect(x, y - dy * rank, x + 20, y - dy * rank + 20)), paint);
-			x += 155;
+			x += RELIGION_DX;
 		}
 	}
 
 	private void drawPawnScience(Canvas c, Player p) {
-		int dx = 120;
-		int x = 1500;
-		int y = 610;
+		int dx = SCIENCE_DX;
+		int x = SCIENCE_X0;
+		int y = SCIENCE_Y0;
 		int x1;
-		int sep = 50;
+		int sep = SCIENCE_DX_TECH1;
 		
 		for(int i=0; i<Science.TECHOLOGIES_COUNT; i++){
 			int rank = p.getTechnoRank(i);
 			x1=rank==0?x:x+sep+(rank-1)*dx;
 			c.drawRect(relates(new Rect(x1, y , x1 + 20 , y  + 20)), paint);
-			y += 100;
+			y += SCIENCE_DY;
 		}
 	}
 
 	private void drawMonuments(Canvas c, List<Building> monuments) {
-		int x = 1222;
-		int y = 1012;
-		int dx = 111 + 11;
+		int x = MONUMENTS_X0;
+		int y = MONUMENTS_Y0;
 		for (Building m : monuments) {
 			c.drawRect(relates(new Rect(x, y, x + 113, y + 145)), paint);
-			x += dx;
+			x += MONUMENTS_DX;
 		}
 	}
 
 	private void drawBuildings(Canvas c, List<Building> buildings) {
-		int x = 1222;
-		int y = 1190;
-		int dx = 111 + 11;
+		int x = BUILDINGS_X0;
+		int y = BUILDINGS_Y0;
 		for (Building m : buildings) {
 			c.drawRect(relates(new Rect(x, y, x + 113, y + 145)), paint);
-			x += dx;
+			x += BUILDINGS_DX;
 		}
 	}
 
