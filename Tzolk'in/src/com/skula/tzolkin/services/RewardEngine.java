@@ -6,11 +6,73 @@ import com.skula.tzolkin.models.Pawn;
 import com.skula.tzolkin.models.Player;
 import com.skula.tzolkin.models.Religion;
 import com.skula.tzolkin.models.Science;
+import com.skula.tzolkin.models.Wheel;
 
 public class RewardEngine {
 
-	public static void handleWheelsReward(Pawn pawn, Player pl) {
-
+	public static void handleWheelsReward(Pawn pa, Player pl) {
+		if(pa.getWheel()==Wheel.GREEN){
+			switch(pa.getSprocket()){
+			case 0:
+				break;
+			case 1:
+				pl.addCorn(3);
+				break;
+			case 2:
+				// TODO: choix bois/mais
+				break;
+			case 3:
+				// TODO: choix bois/mais
+				break;
+			case 4:
+				// TODO: choix bois/mais
+				break;
+			case 5:
+				// TODO: choix bois/mais
+				break;
+			case 6:
+				// TODO: choix de la case				
+				break;
+			case 7:
+				// TODO: choix de la case	
+				break;
+			}
+		}else if(pa.getWheel()==Wheel.GRAY){
+			switch(pa.getSprocket()){
+			case 0:
+				break;
+			case 1:
+				pl.addWood(1);
+				break;
+			case 2:
+				pl.addStone(1);
+				pl.addCorn(1);
+				break;
+			case 3:
+				pl.addGold(1);
+				pl.addCorn(2);
+				break;
+			case 4:
+				pl.addSkulls(1);
+				break;
+			case 5:
+				pl.addGold(1);
+				pl.addStone(1);
+				pl.addCorn(2);
+				break;
+			case 6:			
+				// TODO: choix de la case
+				break;
+			case 7:
+				break;
+			}
+		}else if(pa.getWheel()==Wheel.RED){
+		
+		}else if(pa.getWheel()==Wheel.YELLOW){
+		
+		}else {
+		
+		}
 	}
 
 	public static void handleTemplesReward(int phase, Religion rel, Player pl) {

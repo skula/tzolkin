@@ -4,29 +4,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Gearing {
-	private static final int TURN_SIZE = 26;
+	private static final int TURN_COUNT = 26;
 	public static final int FIELD_CORN = 0;
 	public static final int FIELD_WOOD = 1;
-
+	
 	private int position;
-	private Wheel[] wheels;
 	private boolean[] skulls;
 	private Map<Integer, Integer[]> fields;
 
-	public static void main(String[] args) {
-
+	private static Wheel[] wheels;
+	static{
+		wheels = new Wheel[5];
+		wheels[Wheel.GREEN] = new Wheel(0, 8, new int[]{0, 1, 2, 3, 4, 5, 6, 7});
+		wheels[Wheel.GRAY] = new Wheel(1, 8, new int[]{0, 1, 2, 3, 4, 5, 6, 7});
+		wheels[Wheel.RED] = new Wheel(2, 8, new int[]{0, 1, 2, 3, 4, 5, 6, 7});
+		wheels[Wheel.YELLOW] = new Wheel(3, 8, new int[]{0, 1, 2, 3, 4, 5, 6, 7});
+		wheels[Wheel.BLUE] = new Wheel(4, 11, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
 	}
-
+	
 	public Gearing() {
 		this.position = 1;
-
-		this.wheels = new Wheel[5];
-		this.wheels[0] = Wheel.WHEEL_GREEN;
-		this.wheels[1] = Wheel.WHEEL_GRAY;
-		this.wheels[2] = Wheel.WHEEL_RED;
-		this.wheels[3] = Wheel.WHEEL_YELLOW;
-		this.wheels[4] = Wheel.WHEEL_BLUE;
-
+		
 		this.skulls = new boolean[9];
 		for (int i = 0; i < 9; i++) {
 			skulls[i] = false;
@@ -43,12 +41,12 @@ public class Gearing {
 				FIELD_WOOD });
 	}
 
-	public int getEffect(int wheelId, int rank) {
+	public static int getEffect(int wheelId, int rank) {
 		return wheels[wheelId].getEffect(rank);
 	}
 
-	public boolean canMove(Pawn s) {
-		return s.getSprocket() < wheels[s.getWheel()].getSize();
+	public static boolean canMove(Pawn p) {
+		return p.getSprocket() < wheels[p.getWheel()].getSize();
 	}
 	
 	public void turn(){

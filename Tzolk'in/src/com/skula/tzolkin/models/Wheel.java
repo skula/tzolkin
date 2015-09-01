@@ -1,11 +1,11 @@
 package com.skula.tzolkin.models;
 
 public class Wheel {
-	public static final Wheel WHEEL_GREEN = new Wheel(0, 8, new int[]{0, 1, 2, 3, 4, 5, 6, 7});
-	public static final Wheel WHEEL_GRAY = new Wheel(1, 8, new int[]{0, 1, 2, 3, 4, 5, 6, 7});
-	public static final Wheel WHEEL_RED = new Wheel(2, 8, new int[]{0, 1, 2, 3, 4, 5, 6, 7});
-	public static final Wheel WHEEL_YELLOW = new Wheel(3, 8, new int[]{0, 1, 2, 3, 4, 5, 6, 7});
-	public static final Wheel WHEEL_BLUE = new Wheel(4, 11, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+	public static final int GREEN = 0;
+	public static final int GRAY = 1;
+	public static final int RED = 2;
+	public static final int YELLOW = 3;
+	public static final int BLUE = 4;
 	
 	private int id;
 	private int size;
